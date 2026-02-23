@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کازرون خودرو</title>
+
+<style>
+body{
+margin:0;
+font-family:tahoma;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+}
+
+header{
+text-align:center;
+padding:30px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+}
+
+h1{
+margin:0;
+font-size:28px;
+}
+
+.section{
+width:95%;
+max-width:1300px;
+margin:40px auto;
+}
+
+.section h2{
+border-right:5px solid #00ffcc;
+padding-right:10px;
+margin-bottom:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+gap:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.06);
+padding:18px;
+border-radius:15px;
+text-align:center;
+transition:0.3s;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.7);
+}
+
+button{
+margin-top:10px;
+padding:7px 14px;
+border:none;
+border-radius:8px;
+background:#00ffcc;
+color:black;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🚗 کازرون خودرو</h1>
+<p>نمایشگاه هوشمند انتخاب خودرو</p>
+</header>
+
+<!-- داخلی -->
+<div class="section">
+<h2>🚙 خودروهای تولید داخل</h2>
+<div class="grid">
+
+<!-- ایران خودرو -->
+<div class="card">سمند<button onclick="selectDomestic('سمند')">انتخاب</button></div>
+<div class="card">سمند EF7<button onclick="selectDomestic('سمند EF7')">انتخاب</button></div>
+<div class="card">دنا<button onclick="selectDomestic('دنا')">انتخاب</button></div>
+<div class="card">دنا پلاس<button onclick="selectDomestic('دنا پلاس')">انتخاب</button></div>
+<div class="card">پژو 206<button onclick="selectDomestic('پژو 206')">انتخاب</button></div>
+<div class="card">پژو 207<button onclick="selectDomestic('پژو 207')">انتخاب</button></div>
+<div class="card">پژو پارس<button onclick="selectDomestic('پژو پارس')">انتخاب</button></div>
+<div class="card">رانا<button onclick="selectDomestic('رانا')">انتخاب</button></div>
+<div class="card">تارا<button onclick="selectDomestic('تارا')">انتخاب</button></div>
+
+<!-- سایپا -->
+<div class="card">پراید 111<button onclick="selectDomestic('پراید 111')">انتخاب</button></div>
+<div class="card">تیبا<button onclick="selectDomestic('تیبا')">انتخاب</button></div>
+<div class="card">تیبا 2<button onclick="selectDomestic('تیبا 2')">انتخاب</button></div>
+<div class="card">ساینا<button onclick="selectDomestic('ساینا')">انتخاب</button></div>
+<div class="card">کوییک<button onclick="selectDomestic('کوییک')">انتخاب</button></div>
+<div class="card">شاهین<button onclick="selectDomestic('شاهین')">انتخاب</button></div>
+<div class="card">اطلس<button onclick="selectDomestic('اطلس')">انتخاب</button></div>
+
+</div>
+</div>
+
+<!-- خارجی -->
+<div class="section">
+<h2>🚘 خودروهای خارجی</h2>
+<div class="grid">
+
+<!-- ژاپنی -->
+<div class="card">تویوتا کرولا<button onclick="selectForeign('تویوتا کرولا')">انتخاب</button></div>
+<div class="card">تویوتا کمری<button onclick="selectForeign('تویوتا کمری')">انتخاب</button></div>
+<div class="card">تویوتا لندکروز<button onclick="selectForeign('تویوتا لندکروز')">انتخاب</button></div>
+<div class="card">مزدا 3<button onclick="selectForeign('مزدا 3')">انتخاب</button></div>
+<div class="card">مزدا CX5<button onclick="selectForeign('مزدا CX5')">انتخاب</button></div>
+<div class="card">نیسان جوک<button onclick="selectForeign('نیسان جوک')">انتخاب</button></div>
+<div class="card">نیسان ایکس تریل<button onclick="selectForeign('نیسان ایکس تریل')">انتخاب</button></div>
+
+<!-- کره‌ای -->
+<div class="card">هیوندای سوناتا<button onclick="selectForeign('هیوندای سوناتا')">انتخاب</button></div>
+<div class="card">هیوندای سانتافه<button onclick="selectForeign('هیوندای سانتافه')">انتخاب</button></div>
+<div class="card">هیوندای توسان<button onclick="selectForeign('هیوندای توسان')">انتخاب</button></div>
+<div class="card">کیا سراتو<button onclick="selectForeign('کیا سراتو')">انتخاب</button></div>
+<div class="card">کیا اپتیما<button onclick="selectForeign('کیا اپتیما')">انتخاب</button></div>
+<div class="card">کیا اسپورتیج<button onclick="selectForeign('کیا اسپورتیج')">انتخاب</button></div>
+
+<!-- آلمانی -->
+<div class="card">بنز C200<button onclick="selectForeign('بنز C200')">انتخاب</button></div>
+<div class="card">بنز E250<button onclick="selectForeign('بنز E250')">انتخاب</button></div>
+<div class="card">بنز S500<button onclick="selectForeign('بنز S500')">انتخاب</button></div>
+<div class="card">BMW X1<button onclick="selectForeign('BMW X1')">انتخاب</button></div>
+<div class="card">BMW X3<button onclick="selectForeign('BMW X3')">انتخاب</button></div>
+<div class="card">BMW X5<button onclick="selectForeign('BMW X5')">انتخاب</button></div>
+<div class="card">آئودی A4<button onclick="selectForeign('آئودی A4')">انتخاب</button></div>
+<div class="card">آئودی A6<button onclick="selectForeign('آئودی A6')">انتخاب</button></div>
+<div class="card">پورشه ماکان<button onclick="selectForeign('پورشه ماکان')">انتخاب</button></div>
+
+<!-- آمریکایی -->
+<div class="card">فورد موستانگ<button onclick="selectForeign('فورد موستانگ')">انتخاب</button></div>
+<div class="card">شورلت کامارو<button onclick="selectForeign('شورلت کامارو')">انتخاب</button></div>
+<div class="card">جیپ گرند چروکی<button onclick="selectForeign('جیپ گرند چروکی')">انتخاب</button></div>
+
+</div>
+</div>
+
+<script>
+let domesticSelected = false;
+
+function selectDomestic(name){
+domesticSelected = true;
+alert("خودروی " + name + " انتخاب شد.\nموعد تحویل: چهارم فروردین می باشد.");
+}
+
+function selectForeign(name){
+if(!domesticSelected){
+alert("برای خودروهای خارجی باید یک خودروی تولید داخل نیز انتخاب گردد.");
+} else {
+alert("خودروی " + name + " انتخاب شد.\nموعد تحویل: چهارم فروردین می باشد.");
+}
+}
+</script>
+
+</body>
+</html>
