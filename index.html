@@ -3,113 +3,248 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>حسین کلاه پشمکی | کازرون خودرو دات کام</title>
+
+<title>حسین کلاه پشمکی | کازرون خودرو</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
 
 <style>
 body{
-margin:0;
-font-family:tahoma;
-background:#0b0b0b;
-color:white;
+    font-family:tahoma;
+    background:linear-gradient(135deg,#1f1f2e,#2c3e50);
+    margin:0;
+    padding:0;
+    color:white;
 }
 
-header{
-text-align:center;
-padding:25px;
-background:#111;
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
 }
 
+/* عنوان اصلی */
+.site-title{
+    font-family: 'Lalezar', cursive;
+    font-size:52px;
+    text-align:center;
+    margin-top:20px;
+    background: linear-gradient(90deg,#f39c12,#e74c3c,#9b59b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing:3px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.site-sub{
+    text-align:center;
+    font-size:20px;
+    color:#ecf0f1;
+    margin-bottom:30px;
+}
+
+/* هشدار */
+.warning{
+    background:#e74c3c;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:30px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* بخش خودروها */
 .section{
-width:95%;
-max-width:1400px;
-margin:40px auto;
+    margin-bottom:40px;
 }
 
-.carBox{
-background:#1a1a1a;
-padding:15px;
-margin:10px;
-border-radius:12px;
-display:inline-block;
-width:180px;
-text-align:center;
+.section h2{
+    margin-bottom:15px;
+}
+
+.cars{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:white;
+    color:black;
+    padding:18px;
+    border-radius:14px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.4);
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 button{
-background:#00ff88;
-border:none;
-padding:8px 15px;
-border-radius:8px;
-cursor:pointer;
-font-weight:bold;
+    background:#27ae60;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#219150;
+}
+
+/* مودال */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:14px;
+    width:320px;
+}
+
+input, select{
+    width:100%;
+    padding:8px;
+    margin-bottom:12px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+.success{
+    background:#2ecc71;
+    padding:12px;
+    border-radius:8px;
+    text-align:center;
+    display:none;
+    margin-top:20px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>حسین کلاه پشمکی</h1>
-<p>کازرون خودرو دات کام</p>
-</header>
+<div class="container">
+
+<div class="site-title">
+حسین کلاه پشمکی
+</div>
+
+<div class="site-sub">
+کازرون خودرو
+</div>
+
+<div class="warning">
+برای خودروهای خارجی باید یک خودروی تولید داخل هم انتخاب گردد
+</div>
 
 <div class="section">
+<h2>🚗 خودروهای تولید داخل</h2>
+<div class="cars">
+<div class="card">پژو ۲۰۷<button onclick="selectCar('پژو ۲۰۷','domestic')">انتخاب</button></div>
+<div class="card">دنا پلاس<button onclick="selectCar('دنا پلاس','domestic')">انتخاب</button></div>
+<div class="card">تارا<button onclick="selectCar('تارا','domestic')">انتخاب</button></div>
+<div class="card">شاهین<button onclick="selectCar('شاهین','domestic')">انتخاب</button></div>
+<div class="card">رانا پلاس<button onclick="selectCar('رانا پلاس','domestic')">انتخاب</button></div>
+<div class="card">سورن پلاس<button onclick="selectCar('سورن پلاس','domestic')">انتخاب</button></div>
+<div class="card">کوییک<button onclick="selectCar('کوییک','domestic')">انتخاب</button></div>
+<div class="card">ساینا<button onclick="selectCar('ساینا','domestic')">انتخاب</button></div>
+</div>
+</div>
 
-<h2>🚗 لیست خودروها</h2>
+<div class="section">
+<h2>🌍 خودروهای خارجی</h2>
+<div class="cars">
+<div class="card">تویوتا کمری<button onclick="selectCar('تویوتا کمری','foreign')">انتخاب</button></div>
+<div class="card">بی‌ام‌و X3<button onclick="selectCar('بی‌ام‌و X3','foreign')">انتخاب</button></div>
+<div class="card">بنز C200<button onclick="selectCar('بنز C200','foreign')">انتخاب</button></div>
+<div class="card">کیا اسپورتیج<button onclick="selectCar('کیا اسپورتیج','foreign')">انتخاب</button></div>
+<div class="card">هیوندای توسان<button onclick="selectCar('هیوندای توسان','foreign')">انتخاب</button></div>
+<div class="card">نیسان ایکس تریل<button onclick="selectCar('نیسان ایکس تریل','foreign')">انتخاب</button></div>
+<div class="card">مزدا CX5<button onclick="selectCar('مزدا CX5','foreign')">انتخاب</button></div>
+<div class="card">فولکس واگن تیگوان<button onclick="selectCar('فولکس واگن تیگوان','foreign')">انتخاب</button></div>
+</div>
+</div>
 
-<div>
+<div class="success" id="successMessage">
+اطلاعات با موفقیت ثبت شد ✅
+</div>
 
-<div class="carBox">سمند<br><button onclick="selectCar('سمند')">انتخاب</button></div>
-<div class="carBox">دنا پلاس<br><button onclick="selectCar('دنا پلاس')">انتخاب</button></div>
-<div class="carBox">پژو 206<br><button onclick="selectCar('پژو 206')">انتخاب</button></div>
-<div class="carBox">پژو 207<br><button onclick="selectCar('پژو 207')">انتخاب</button></div>
-<div class="carBox">پژو پارس<br><button onclick="selectCar('پژو پارس')">انتخاب</button></div>
+</div>
 
-<div class="carBox">رانا<br><button onclick="selectCar('رانا')">انتخاب</button></div>
-<div class="carBox">تارا<br><button onclick="selectCar('تارا')">انتخاب</button></div>
+<!-- مودال -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<h3 id="carTitle"></h3>
 
-<div class="carBox">تیبا<br><button onclick="selectCar('تیبا')">انتخاب</button></div>
-<div class="carBox">ساینا<br><button onclick="selectCar('ساینا')">انتخاب</button></div>
-<div class="carBox">کوییک<br><button onclick="selectCar('کوییک')">انتخاب</button></div>
-<div class="carBox">شاهین<br><button onclick="selectCar('شاهین')">انتخاب</button></div>
+<input type="text" id="name" placeholder="نام شما">
+<input type="text" id="phone" placeholder="شماره موبایل">
 
-<div class="carBox">چری تیگو 7<br><button onclick="selectCar('تیگو 7')">انتخاب</button></div>
-<div class="carBox">چری تیگو 8<br><button onclick="selectCar('تیگو 8')">انتخاب</button></div>
-<div class="carBox">آریزو 6<br><button onclick="selectCar('آریزو 6')">انتخاب</button></div>
+<select id="color">
+<option value="">انتخاب رنگ خودرو</option>
+<option>سفید</option>
+<option>مشکی</option>
+<option>نقره‌ای</option>
+<option>قرمز</option>
+<option>آبی</option>
+</select>
 
-<div class="carBox">فونیکس FX<br><button onclick="selectCar('فونیکس FX')">انتخاب</button></div>
-<div class="carBox">KMC J7<br><button onclick="selectCar('KMC J7')">انتخاب</button></div>
-<div class="carBox">KMC T8<br><button onclick="selectCar('KMC T8')">انتخاب</button></div>
-
-<div class="carBox">MVM X22<br><button onclick="selectCar('MVM X22')">انتخاب</button></div>
-<div class="carBox">MVM X33<br><button onclick="selectCar('MVM X33')">انتخاب</button></div>
-
-<div class="carBox">تویوتا کرولا<br><button onclick="selectCar('کرولا')">انتخاب</button></div>
-<div class="carBox">تویوتا کمری<br><button onclick="selectCar('کمری')">انتخاب</button></div>
-<div class="carBox">تویوتا لندکروز<br><button onclick="selectCar('لندکروز')">انتخاب</button></div>
-
-<div class="carBox">مزدا 3<br><button onclick="selectCar('مزدا 3')">انتخاب</button></div>
-<div class="carBox">مزدا CX5<br><button onclick="selectCar('مزدا CX5')">انتخاب</button></div>
-
-<div class="carBox">نیسان جوک<br><button onclick="selectCar('نیسان جوک')">انتخاب</button></div>
-<div class="carBox">نیسان ایکس تریل<br><button onclick="selectCar('ایکس تریل')">انتخاب</button></div>
-
-<div class="carBox">بنز C200<br><button onclick="selectCar('بنز C200')">انتخاب</button></div>
-<div class="carBox">بنز E250<br><button onclick="selectCar('بنز E250')">انتخاب</button></div>
-<div class="carBox">بنز S500<br><button onclick="selectCar('بنز S500')">انتخاب</button></div>
-
-<div class="carBox">BMW X3<br><button onclick="selectCar('BMW X3')">انتخاب</button></div>
-<div class="carBox">BMW X5<br><button onclick="selectCar('BMW X5')">انتخاب</button></div>
-<div class="carBox">BMW سری 5<br><button onclick="selectCar('BMW سری 5')">انتخاب</button></div>
+<button onclick="submitForm()">ثبت اطلاعات</button>
+<button onclick="closeModal()">انصراف</button>
 
 </div>
 </div>
 
 <script>
-function selectCar(name){
-alert("خودروی " + name + " انتخاب شد.\nموعد تحویل: چهارم فروردین می باشد.");
+let domesticSelected = false;
+
+function selectCar(car,type){
+
+    if(type === "foreign" && !domesticSelected){
+        alert("برای انتخاب خودروی خارجی باید ابتدا یک خودروی تولید داخل انتخاب کنید");
+        return;
+    }
+
+    if(type === "domestic"){
+        domesticSelected = true;
+    }
+
+    document.getElementById("carTitle").innerText = "ثبت اطلاعات برای " + car;
+    document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+    document.getElementById("modal").style.display="none";
+}
+
+function submitForm(){
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let color = document.getElementById("color").value;
+
+    if(name==="" || phone==="" || color===""){
+        alert("لطفاً تمام فیلدها را کامل کنید");
+        return;
+    }
+
+    closeModal();
+    document.getElementById("successMessage").style.display="block";
 }
 </script>
 
 </body>
-</html>
+  </html>
